@@ -5,7 +5,7 @@ package ch.wideside.model;
  *
  * @author Sirius
  */
-public class Car {
+public class Car implements Comparable<Car> {
 
     private String model;
 
@@ -26,5 +26,10 @@ public class Car {
 
     public String getColor() {
         return color;
+    }
+
+    @Override
+    public int compareTo(Car o) {
+        return this.getModel().compareTo(o.getModel());
     }
 }
